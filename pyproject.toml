@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "banking-mcp-suite"
+version = "0.1.0"
+description = "A suite of MCP servers exposing banking-relevant AI tools"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.7.0",
+    "anthropic>=0.28.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-httpx>=0.30.0",
+]
+
+[project.scripts]
+mcp-accounts    = "servers.accounts.server:main"
+mcp-fx          = "servers.fx.server:main"
+mcp-credit      = "servers.credit.server:main"
+mcp-compliance  = "servers.compliance.server:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
