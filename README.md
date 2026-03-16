@@ -54,7 +54,7 @@ git clone https://github.com/your-username/banking-mcp-suite
 cd banking-mcp-suite
 
 # Install dependencies
-uv pip install -e ".[dev]"
+uv pip install -e requirements.txt
 
 # Set your Anthropic API key (only needed for the agent demo)
 export ANTHROPIC_API_KEY=sk-...
